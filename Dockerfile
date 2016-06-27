@@ -34,7 +34,7 @@ RUN yum install -y http://yum.postgresql.org/9.4/redhat/rhel-7-x86_64/pgdg-cento
     && chmod 777 "$GEM_HOME" "$BUNDLE_BIN" \
     && gem install bundler \
     && bundle config build.pg --with-pg-config=/usr/pgsql-9.4/bin/pg_config \
-    && yum -y install nginx passenger \
+    && yum -y install nginx passenger passenger-devel \
     && yum clean all \
     && ln -sf /dev/stdout /var/log/nginx/access.log \
     && ln -sf /dev/stderr /var/log/nginx/error.log
